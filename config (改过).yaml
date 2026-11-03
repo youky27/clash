@@ -80,6 +80,7 @@ dns:
   # 日常DNS：DoH加密并遵循规则
   nameserver:
     - "https://cloudflare-dns.com/dns-query#RULES"
+    - "https://dns.google/dns-query#RULES"
   # 代理节点域名专用DNS
   proxy-server-nameserver:
     - https://dns.alidns.com/dns-query
@@ -120,7 +121,8 @@ proxy-groups:
 # 规则匹配
 rules:
   - DOMAIN,cloudflare-dns.com,🚀 默认代理
-  - AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
+  - DOMAIN,dns.google,🚀 默认代理
+  #- AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
   - RULE-SET,private_ip,直连,no-resolve
   - RULE-SET,private_domain,直连
   - RULE-SET,ai_domain,🤖 AI
@@ -141,6 +143,7 @@ rules:
   - RULE-SET,usd_domain,💶 Wallet
   - RULE-SET,steamcn_domain,直连
   - RULE-SET,steam_domain,🎮 Steam
+  - RULE-SET,cn_domain,直连
   - RULE-SET,cn!_domain,🚀 默认代理
   - RULE-SET,google_ip,🍀 Google
   - RULE-SET,apple_ip,🍎 Apple
