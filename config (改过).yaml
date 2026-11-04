@@ -3,7 +3,7 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://47.112.97.173:5000/api/v1/client/subscribe?token=9136a862fd08859daab60439a5e233a9"
+    url: "机场订阅"
     type: http
     interval: 0
     health-check:
